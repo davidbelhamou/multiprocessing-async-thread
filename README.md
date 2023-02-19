@@ -63,16 +63,20 @@ The GIL is used within each Python process, but not across processes. This means
 multiple child processes can execute at the same time and are not subject to the GIL.
 This has implications for the types of tasks best suited to each class.
 
-***Summary of Differences***  
+***Summary of Differences***    
+
 It may help to summarize and contrast the differences between the threading and multiprocessing modules.
-      Property            |       threading            |        multiprocessing
-      Type                     Uses native threads.           Uses native processes.
-Relation                       Belongs to a process.          Has threads and children.
-Sharing                        Shared memory.                  Inter-process comms.
-Weight                         Light, fast to start.           Heavy, slow to start.
-Parallelism                    Limited (GIL).                  Full (no GIL).
-Tasks                          IO-bound tasks.                 CPU-bound tasks.
-Number                         10s to 1,000s.                  10s (or fewer).
+ |     Property            |       threading            |        multiprocessing           |
+ |  ---------------------  |:--------------------------:|  -------------------------------:|
+ |     Type                |     Uses native threads.   |       Uses native processes.     |
+ |     Relation            |     Belongs to a process.  |        Has threads and children. |
+ |     Sharing             |     Shared memory.         |        Inter-process comms.      |
+ |     Weight              |     Light, fast to start.  |         Heavy, slow to start.    |
+ |     Parallelism         |     Limited (GIL).         |         Full (no GIL).           |
+ |     Tasks               |     IO-bound tasks.        |         CPU-bound tasks.         |
+ |     Number              |     10s to 1,000s.         |         10s (or fewer).          |
+
+
 
 ***Examples of CPU-Bound Tasks***  
 Some examples of CPU-bound tasks include:
