@@ -1,11 +1,12 @@
 import numpy as np
 import pandas as pd
+import json
 # store names
-stores = ["store_a", "store_b", "store_c", "store_d", "store_e"]
+stores = name = ["david", "dima", "elad", "nir", "ron", "roy"]
 
 # number of daily sales
 number_of_sales_per_store = 6
-df = pd.DataFrame(columns=["store_name", "sales"], dtype=np.int8)
+df = pd.DataFrame(columns=["id", "name"], dtype=np.int8)
 for store in stores:
     d = pd.DataFrame(
         dict(
@@ -17,4 +18,10 @@ for store in stores:
     )
     df = df.append(d)
 
-df
+json_data = df.to_json()
+# Serializing json
+json_object = json.dumps(dictionary, indent=4)
+
+# Writing to sample.json
+with open("sample.json", "w") as outfile:
+    outfile.write(json_object)
