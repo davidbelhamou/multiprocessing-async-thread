@@ -1,13 +1,13 @@
 # multiprocessing-async-thread
 
 - ***Some important keywords***:
-  - A process is a computer program
-  - A thread refers to a thread of execution within a computer program
+    - A process is a computer program
+    - A thread refers to a thread of execution within a computer program
 
 
 - Therefore, each program is a process that has at least one thread that executes instructions for that process.
-  -  Concurrency refers to executing tasks out of order.
-  -  Parallelism refers to executing tasks simultaneously.
+    - Concurrency refers to executing tasks out of order.
+    - Parallelism refers to executing tasks simultaneously.
 
 When we are developing code, we can achieve concurrency with or without parallelism, although concurrency
 (e.g. task order being irrelevant) is a prerequisite for parallelism.  
@@ -19,7 +19,6 @@ Threads are fast to start and can share data with each other within a single Pyt
 Nevertheless, thread-based concurrency in Python is limited by the Global Interpreter Lock
 (GIL). Threads are only capable of parallelism when the GIL is released, such as when
 performing I/O operations or explicitly by third party libraries.
-
 
 Process-based concurrency is provided via the multiprocessing module and the Process
 class. It was developed in Python v2.6 as an alternative to thread-based concurrency that is not
@@ -38,19 +37,19 @@ multiprocessing for process-based concurrency in Python.
 The threading and multiprocessing modules are also quite different, let’s review some of
 the most important differences.
 They are:
+
 1. Native Threads vs. Native Processes.
 2. Shared Memory vs. Inter-Process Communication.
 3. Limited vs Full Parallelism (GIL).
 
-
 ***Shared Memory vs. Inter-Process Communication***  
 Concurrency typically requires sharing data or program state between tasks.
-Threads and Processes have important differences in the way they access shared state. Threads can share memory within a process.
+Threads and Processes have important differences in the way they access shared state. Threads can share memory within a
+process.
 This means that functions executed in new threads can access the same data. These might
 be global variables or data shared via function arguments. As such, sharing state between threads is straightforward.
 Processes do not have shared memory like threads. Instead, state must be serialized and transmitted between processes,
 called inter-process communication.
-
 
 ***Limited vs Full Parallelism (GIL)***  
 Thread-based concurrency supports limited parallelism, whereas process-based concurrency
@@ -63,23 +62,21 @@ The GIL is used within each Python process, but not across processes. This means
 multiple child processes can execute at the same time and are not subject to the GIL.
 This has implications for the types of tasks best suited to each class.
 
-***Summary of Differences***    
+***Summary of Differences***
 
-It may help to summarize and contrast the differences between the threading and multiprocessing modules.
- |     Property            |       threading            |        multiprocessing           |
- |  ---------------------  |:--------------------------:|  -------------------------------:|
- |     Type                |     Uses native threads.   |       Uses native processes.     |
- |     Relation            |     Belongs to a process.  |        Has threads and children. |
- |     Sharing             |     Shared memory.         |        Inter-process comms.      |
- |     Weight              |     Light, fast to start.  |         Heavy, slow to start.    |
- |     Parallelism         |     Limited (GIL).         |         Full (no GIL).           |
- |     Tasks               |     IO-bound tasks.        |         CPU-bound tasks.         |
- |     Number              |     10s to 1,000s.         |         10s (or fewer).          |
-
-
+| Property    | threading             | multiprocessing           |
+|-------------|-----------------------|---------------------------|
+| Type        | Uses native threads.  | Uses native processes.    |
+| Relation    | Belongs to a process. | Has threads and children. |
+| Sharing     | Shared memory.        | Inter-process comms.      |
+| Weight      | Light, fast to start. | Heavy, slow to start.     |
+| Parallelism | Limited (GIL).        | Full (no GIL).            |
+| Tasks       | IO-bound tasks.       | CPU-bound tasks.          |
+| Number      | 10s to 1,000s.        | 10s (or fewer).           |
 
 ***Examples of CPU-Bound Tasks***  
 Some examples of CPU-bound tasks include:
+
 1. Calculating points in a fractal.
 2. Estimating Pi
 3. Factoring primes.
@@ -87,9 +84,9 @@ Some examples of CPU-bound tasks include:
 5. Processing text.
 6. Running simulations.
 
-
 ***Examples of IO-Bound Tasks***  
 Some examples of common IO-bound tasks include:
+
 1. Reading or writing a file from the hard drive.
 2. Reading or writing to standard output, input, or error (stdin, stdout, stderr).
 3. Printing a document.
