@@ -2,7 +2,7 @@
 
 - ***Some important keywords***:
   - A process is a computer program
-  - A process is a computer program
+  - A thread refers to a thread of execution within a computer program
 
 
 - Therefore, each program is a process that has at least one thread that executes instructions for that process.
