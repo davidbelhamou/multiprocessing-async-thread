@@ -1,3 +1,45 @@
+Python Multiprocessing Jump-Start
+=================================
+
+README
+------
+
+Welcome to the Python Multiprocessing Jump-Start!
+
+Your package contains:
+
+1. README (this file)
+	README.txt
+2. The Ebook in different formats:
+	multiprocessing_jumpstart.pdf
+	multiprocessing_jumpstart.epub
+3. Code Examples:
+	src/
+
+The src/ directory provides one file for each code example used in the book.
+
+If you need help sending the epub or pdf to your kindle, see:
+
+* Send to kindle
+  https://www.amazon.com/gp/sendtokindle
+
+If you need help adding the epub or pdf to iBooks, see:
+
+* Import books, audiobooks or PDFs in Books on Mac
+  https://support.apple.com/en-au/guide/books/ibkseed72068/mac
+
+
+Any questions at all, contact me directly via:
+https://SuperFastPython.com/contact/
+
+
+Kind Regards,
+
+Jason Brownlee.
+SuperFastPython.com
+
+
+
 # multiprocessing-async-thread
 
 - ***Some important keywords***:
